@@ -35,7 +35,6 @@ public class ThoughtAPITests {
 		RestAssuredMockMvc.mockMvc = mockMvc;
 	}
 
-
 	@Test
 	public void createsDataSource() {
 		when().
