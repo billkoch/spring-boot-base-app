@@ -1,6 +1,7 @@
 package srai.integration;
 
-import static org.junit.Assert.assertNotNull;
+import static com.jayway.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -37,6 +38,10 @@ public class ThoughtAPITests {
 
 	@Test
 	public void createsDataSource() {
-		assertNotNull("definitelynotnull");
+		when().
+		get("/people/1").
+		then().
+		statusCode(200).
+		body("firstName", equalTo("Stuart"));
 	}
 }
